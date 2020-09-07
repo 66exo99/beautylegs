@@ -1,0 +1,170 @@
+var timerId = null;
+
+function echologin(log,serv) {
+	serv=serv.replace(/@/g,".");
+	document.write("<a h"+'ref="ma'+"ilto:"+log+'@'+serv+'">'+log+'@'+serv+"</a>");
+}
+
+function main_carusel_scroll_initCallback(carousel) {
+	$('#right_arrow').bind('click', function() {
+		carousel.next();
+		return false;
+	});
+
+	$('#left_arrow').bind('click', function() {
+		carousel.prev();
+		return false;
+	});
+};
+
+function ecology_carusel_scroll_initCallback(carousel) {
+	$('#right_arrow').bind('click', function() {
+		carousel.next();
+		setSelectedItem(carousel.index(carousel.first, 3), 3);
+		clearTimeout(timerId);
+		return false;
+	});
+
+	$('#left_arrow').bind('click', function() {
+		carousel.prev();
+		setSelectedItem(carousel.index(carousel.first, 3), 3);
+		clearTimeout(timerId);
+		return false;
+	});
+	
+	moveCarousel(carousel);
+};
+
+function moveCarousel(carousel) {
+	carousel.next();
+	setSelectedItem(carousel.index(carousel.first, 3), 3);
+	timerId = setTimeout( function() {moveCarousel(carousel)} , 3000);
+}
+
+function setSelectedItem(num, count) {
+	if(num > 0) {
+		num = num % count + 1;
+		$('#ecology_carusel .block').removeClass('absolute_red');
+		$('#ecology_carusel .num_'+num+' .block').addClass('absolute_red');
+	}
+}
+
+function partners_carusel_scroll_initCallback(carousel) {
+	$('#partners_right_arrow').bind('click', function() {
+		carousel.next();
+		return false;
+	});
+
+	$('#partners_left_arrow').bind('click', function() {
+		carousel.prev();
+		return false;
+	});
+};
+
+function services_carucel_scroll_initCallback(carousel) {
+	$('.services_carucel .pages a.link').bind('click', function() {
+        carousel.scroll($.jcarousel.intval($(this).attr('num')));
+		$('.articles_pages a.selected').attr('class', 'link');
+		$(this).addClass('selected');
+        return false;
+    });
+};
+
+function photos_carusel_scroll_initCallback(carousel) {
+	$('#right_arrow').bind('click', function() {
+		carousel.next();
+		return false;
+	});
+
+	$('#left_arrow').bind('click', function() {
+		carousel.prev();
+		return false;
+	});
+};
+
+$(document).ready(function(){
+	$("a#showBig").fancybox();
+	$("#accordion").accordion();
+	$("#accordion2").accordion();
+
+	$('#main_carusel').jcarousel({
+		scroll: 1,
+		wrap: 'circular',
+		initCallback: main_carusel_scroll_initCallback
+	});
+	
+	$('#ecology_carusel').jcarousel({
+		scroll: 1,
+		wrap: 'circular',
+		initCallback: ecology_carusel_scroll_initCallback
+	});
+	
+	$('#partners_carusel').jcarousel({
+		scroll: 1,
+		wrap: 'circular',
+		initCallback: partners_carusel_scroll_initCallback
+	});
+	
+	$('#services_carucel').jcarousel({
+		scroll: 1,
+		initCallback: services_carucel_scroll_initCallback
+	});
+	
+	$('.photos_carusel').jcarousel({
+		scroll: 1,
+		wrap: 'circular',
+		initCallback: photos_carusel_scroll_initCallback
+	});
+	
+	$('#services_rotator').easySlider({
+		auto: true, 
+		continuous: true,
+		numeric: true
+	});
+	
+	$('div#services_block').mouseover(function(){
+		$(this).addClass('red');
+	});
+	$('div#services_block').mouseout(function(){
+		$(this).removeClass('red');
+	});
+	
+	$('div#tabs_block').find('#link').each(function(){
+		$(this).click(function(){
+			$('div#tabs_block').find('#link').each(function(){
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+			$('div#tabs_block').find('.text').each(function(){
+				$(this).hide();
+			});
+			$('#text_'+$(this).attr('num')).show();
+			return false;
+		});
+	});
+
+	$('div.news_item').each(function(){
+		$(this).find('div.text').click(function(){
+			if($(this).parent().parent().find('.detail').css('display') == 'none'){
+				$(this).parent().parent().find('.detail').slideDown();
+				$(this).parent().parent().find('.detail_view').addClass('show');
+			}
+			else{
+				$(this).parent().parent().find('.detail').slideUp();
+				$(this).parent().parent().find('.detail_view').removeClass('show');
+			}
+			return false;
+		});
+		$(this).find('.detail_view').click(function(){
+			if($(this).parent().find('.detail').css('display') == 'none'){
+				$(this).parent().find('.detail').slideDown();
+				$(this).addClass('show');
+			}
+			else{
+				$(this).parent().find('.detail').slideUp();
+				$(this).removeClass('show');
+			}
+			return false;
+		});
+	});
+});
