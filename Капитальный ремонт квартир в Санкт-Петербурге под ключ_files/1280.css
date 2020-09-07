@@ -1,0 +1,237 @@
+@media screen and (max-width: 1250px){
+.contacts__wrapper div{
+  flex-basis: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+
+      justify-content: center;
+}}
+@media screen and (max-width: 1150px){
+
+  .cont-blok{    width: 58%;
+    padding: 20px;
+    height: 400px;
+    background: #f8f8f8;
+
+    z-index: 1;
+    right: 0;
+    opacity: .9;}
+}
+
+@media screen and (max-width: 1019px){
+  .button-calc-top {margin-right: 0px;}
+
+}
+
+@media screen and (max-width: 979px){
+
+.contacts__wrapper {
+    display: block;
+  margin-bottom: 20px;
+}
+.button-calc-top {
+    display: inline-block;
+  padding-bottom: 14px;}
+
+  .main-navigation a {
+      padding: 1em 0.6em;
+  }
+
+  .navigation-top .wrap {
+      padding: .75em 2.416667em;
+  }
+  .cont-blok{    width: 100%;
+    padding: 0px 40px;
+    height: 400px;
+    background: #f8f8f8;
+    position: relative;
+    z-index: 1;
+    right: 0;
+    opacity: .9;}
+
+}
+
+
+@media screen and (max-width: 786px){
+.archive .site-main > article{width: 100%;
+    margin: auto;}
+    .button-more {
+
+      left: auto;
+
+  }
+
+  .button-calc {
+    position: relative;
+    right: auto;
+    padding: 10px 10px 10px 25px;
+    width: 45%;
+    min-width: 169px;
+    min-height: 50px;
+
+}
+.button-calc span{display: block;}
+.button-calc img{float: left;}
+
+
+   .icon-us {
+    display: block; float: none; margin: 50px auto;}}
+
+@media screen and (max-width: 766px){
+  .block-garant .wp-block-column{ flex-basis: 100px; min-width: 180px; flex-grow: 0; margin: 10px auto;}
+
+
+  .button-calc-top {
+      display:block;
+    }
+    .contacts__wrapper {
+
+      margin-bottom: 0px;
+    }
+    .site-branding {
+    padding: 0em 0;
+}
+
+body:not(.title-tagline-hidden) .site-branding-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+html[lang="ru-RU"] h1{    font-size: 18px;}
+.contacts__wrapper {
+ display: block;
+
+}
+.button-calc-top {
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    padding-left: 20%;
+}
+.button-tel{
+  width: auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  padding-left: 7%;
+}
+.button-tel img {
+    float: left;
+}
+
+}
+
+@media screen and (max-width: 640px){
+
+
+  .prefooter #sendphone {
+      width: 90%;
+  }
+
+  .button-calc-top {
+    font-size: 18px;
+  }
+  /* .contacts__phone{font-size: 18px} */
+
+.contacts__title{width: 70%;}
+}
+@media screen and (max-width: 590px){ .prefooter #sendphone {
+    width: 30%;
+    margin: 10px 0px;
+}
+.cont-blok{
+  padding: 0px 0px;
+}
+#sendphone {
+
+    width: 40%;
+}
+
+}
+
+
+
+@media screen and (max-width: 530px){
+  .prefooter #sendphone {
+      width: 70%;
+
+  }
+  #calc select {
+    width: 100%;}
+  #calc input {
+    width: 50%;
+
+}
+.n2-section-smartslider {display: none;}
+.pre-one{background:  none;}
+.pre-one{background:  none;}
+.fon-front img{display: none;}
+
+  .button-calc{right: 0px;}
+  .contacts__phone{font-size: 18px}
+
+  .icon-us-up {
+  margin: 60px auto;
+      width: 270px;
+      float: none;
+      display: block;
+      border-radius: 0 0 25px 25px;
+
+  }
+  .icon-us-up:last-child {
+    margin: 40px auto;
+        width: 270px;
+        float: none;
+        display: block;
+          border-radius: 0 0 25px 25px;
+}
+}
+@media screen and (max-width: 504px){
+
+.button-calc-top {
+    padding-left: 10%;
+}}
+@media screen and (max-width: 450px){
+
+.contacts__title {
+    width: 60%;
+}}
+@media screen and (max-width: 430px){
+
+  .contacts__wrapper {
+   display: block;
+
+}
+.contacts {
+    display: block;
+
+}
+.contacts__title {
+    width: 90%;
+    margin: auto;
+}
+.contacts__phone{font-size: 24px}
+
+.button-calc-top {
+  font-size: 18px;
+    padding-left: 22%;
+}
+}
+@media screen and (max-width: 400px){
+.button-calc-top {
+
+
+}
+
+.icon-us {margin-right: 0px;margin-left: 0px; min-width: 100%;}
+#sendphone {
+    width: 80%;
+}
+
+}
+@media screen and (max-width: 330px){.contacts__phone{font-size: 20px;}
+.button-calc-top{padding-left: 14%;}
+}
